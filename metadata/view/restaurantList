@@ -1,0 +1,16 @@
+{
+    "id": "ExtBox1-ext-gen10046",
+    "type": "container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "restaurantList"
+    },
+    "customConfigs": [],
+    "designerId": "02bf789c-c1fe-4499-af80-684a417a460d",
+    "$viewOrder": 3,
+    "expanded": true
+}

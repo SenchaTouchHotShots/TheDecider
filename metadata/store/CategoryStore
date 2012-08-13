@@ -1,0 +1,19 @@
+{
+    "id": "ExtBox1-ext-gen7958",
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "model": "Category",
+        "storeId": "MyJsonStore",
+        "designer|userClassName": "CategoryStore"
+    },
+    "customConfigs": [],
+    "designerId": "94289b59-5998-48e8-94dc-1befe864a8f2",
+    "$viewOrder": 0,
+    "expanded": true
+}

@@ -1,0 +1,19 @@
+#categoryList .icon {
+    background: #ccc;
+    border-radius: 5px;
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    margin-right: 16px;
+    float: left;
+}
+
+#categoryList .x-list-item-label div {
+    line-height: 32px;
+    vertical-align: middle;
+    height: 32px;
+}
+
+#categoryList .x-item-selected .icon {
+background: #4990CB;
+}

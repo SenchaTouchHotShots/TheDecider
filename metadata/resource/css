@@ -1,0 +1,16 @@
+{
+    "id": "ExtBox1-ext-gen13423",
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "url": "/decider.css"
+    },
+    "customConfigs": [],
+    "designerId": "2268cb0d-bf0a-455d-99e0-8f15a9af5cc1",
+    "$viewOrder": 0,
+    "expanded": true
+}

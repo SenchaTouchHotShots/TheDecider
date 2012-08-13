@@ -19,14 +19,6 @@
     "xdsBuild": "442",
     "framework": "touch20",
     "topInstanceFileMap": {
-        "788f8be8-72ff-42e4-b617-a712f9732e04": {
-            "paths": [
-                "metadata/view/mainView",
-                "app/view/override/mainView.js",
-                "app/view/mainView.js"
-            ],
-            "className": "mainView"
-        },
         "fb0c72ee-0bd2-4a38-b766-c97db0c5a290": {
             "paths": [
                 "metadata/view/friendChooser",
@@ -51,13 +43,43 @@
             ],
             "className": "restaurantList"
         },
-        "a4ef3882-fcba-4c84-a7f5-49eae42b8f26": {
+        "94289b59-5998-48e8-94dc-1befe864a8f2": {
             "paths": [
-                "metadata/view/editContact",
-                "app/view/override/editContact.js",
-                "app/view/editContact.js"
+                "metadata/store/CategoryStore",
+                "app/store/override/CategoryStore.js",
+                "app/store/CategoryStore.js"
             ],
-            "className": "editContact"
+            "className": "CategoryStore"
+        },
+        "e8b10e07-1bc5-485e-b328-c7b4ede6278c": {
+            "paths": [
+                "metadata/model/Contact",
+                "app/model/override/Contact.js",
+                "app/model/Contact.js"
+            ],
+            "className": "Contact"
+        },
+        "5be03bf4-01cf-4774-b8ee-96f56fd1688f": {
+            "paths": [
+                "metadata/model/Category",
+                "app/model/override/Category.js",
+                "app/model/Category.js"
+            ],
+            "className": "Category"
+        },
+        "dafe680b-1b0a-4483-8a0a-8c430d1eaad0": {
+            "paths": [
+                "metadata/view/ViewPortContainer",
+                "app/view/override/ViewPortContainer.js",
+                "app/view/ViewPortContainer.js"
+            ],
+            "className": "ViewPortContainer"
+        },
+        "2268cb0d-bf0a-455d-99e0-8f15a9af5cc1": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
         }
     },
     "expandedState": {

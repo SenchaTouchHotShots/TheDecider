@@ -13,7 +13,7 @@
     },
     "customConfigs": [],
     "designerId": "fb0c72ee-0bd2-4a38-b766-c97db0c5a290",
-    "$viewOrder": 1,
+    "$viewOrder": 0,
     "expanded": false,
     "cn": [
         {
@@ -50,55 +50,6 @@
             },
             "customConfigs": [],
             "expanded": true
-        },
-        {
-            "id": "ExtBox1-ext-gen2926",
-            "type": "segmentedbutton",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "bottom": null,
-                "margin": "0 0 10 0",
-                "designer|userClassName": "MySegmentedButton",
-                "container|pack": "center"
-            },
-            "customConfigs": [],
-            "expanded": true,
-            "cn": [
-                {
-                    "id": "ExtBox1-ext-gen2935",
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "text": "Clear",
-                        "designer|userClassName": "MyButton"
-                    },
-                    "customConfigs": [],
-                    "expanded": true
-                },
-                {
-                    "id": "ExtBox1-ext-gen2943",
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "text": "Next",
-                        "designer|userClassName": "MyButton1"
-                    },
-                    "customConfigs": [],
-                    "expanded": true
-                }
-            ]
         }
     ]
 }

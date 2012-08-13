@@ -7,11 +7,17 @@
     },
     "codeClass": null,
     "userConfig": {
+        "models": [
+            "Contact",
+            "Category"
+        ],
+        "stores": [
+            "CategoryStore"
+        ],
         "views": [
-            "mainView",
             "confirmLocation",
             "restaurantList",
-            "editContact"
+            "ViewPortContainer"
         ],
         "name": "MyApp"
     },

@@ -17,3 +17,52 @@
 #categoryList .x-item-selected .icon {
 background: #4990CB;
 }
+
+.restaurant {
+    vertical-align: middle;
+}
+.restaurant .name {
+    font-weight: bold;
+    float: left;
+    font-size: 110%;
+}
+.restaurant .phone {
+    font-size: 80%;
+    float: right;
+}
+.restaurant .address {
+    padding-top: 15px;
+    clear: both;
+}
+.restaurant .menu {
+    clear: both;
+    padding-top: 15px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+.restaurant .specials {
+    clear: both;
+    font-size: 80%;
+    font-weight: bold;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+}
+.restaurant .specials dl {
+    font-weight: normal;
+}
+.restaurant .icons {
+    clear: both;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+.restaurant .icons span {
+    background: #4990CB;
+    border-radius: 5px;
+    height: 32px;
+    width: 32px;
+    margin: 0 8px;
+    display: inline-block;
+
+}

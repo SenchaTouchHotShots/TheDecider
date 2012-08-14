@@ -14,9 +14,14 @@
  */
 
 Ext.define('MyApp.view.restaurantList', {
-    extend: 'Ext.Container',
-
+    extend: 'Ext.dataview.List',
+    alias: 'widget.restaurantlist',
     config: {
+        store: 'Restaurants',
+        itemTpl: [
+            '<div>{name}</div>'
+        ],
+        onItemDisclosure: true,
+        grouped: true
     }
-
 });

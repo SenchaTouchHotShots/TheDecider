@@ -15,7 +15,7 @@
 
 Ext.define('MyApp.view.friendChooser', {
     extend: 'Ext.Container',
-
+    alias: 'widget.friendchooser',
     config: {
         id: 'friendChooser',
         layout: {
@@ -31,11 +31,14 @@ Ext.define('MyApp.view.friendChooser', {
             {
                 xtype: 'list',
                 margin: 25,
+                store: 'Contacts',
                 itemTpl: [
-                    '<div>List Item {string}</div>'
+                    '<div>{firstname} {lastname}</div>'
                 ],
                 mode: 'MULTI',
-                flex: 1
+                flex: 1,
+                grouped: true,
+                emptyText: 'No Contacts to display.<br />Please add some by clicking the plus icon.'
             },
             {
                 xtype: 'segmentedbutton',
@@ -48,11 +51,13 @@ Ext.define('MyApp.view.friendChooser', {
                 items: [
                     {
                         xtype: 'button',
-                        text: 'Cancel'
+                        text: 'Cancel',
+                        action: 'cancel'
                     },
                     {
                         xtype: 'button',
-                        text: 'Finish'
+                        text: 'Finish',
+                        action: 'finish'
                     }
                 ]
             }

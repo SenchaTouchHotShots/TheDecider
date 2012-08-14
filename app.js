@@ -33,9 +33,11 @@ Ext.application({
     views: [
         'confirmLocation',
         'restaurantList',
-        'ViewPortContainer'
+        'ViewPortContainer',
+        'friendChooser'
     ],
     requires: [
+        'Ext.DateExtras',
         'Ext.plugin.google.Tracker'
     ],
     name: 'MyApp',

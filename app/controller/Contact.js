@@ -42,7 +42,9 @@ Ext.define('MyApp.controller.Contact', {
         var contact = Ext.create('MyApp.model.Contact', this.getContactEditor().getValues());
         var categories = this.getCategoryList().getSelection();
         var categoryIDs = [];
+        console.log('Categories',categories);
         Ext.each(categories, function(category) {
+            console.log('Category: ',category, category.get('id'));
             categoryIDs.push(category.get('id'));
         });
         contact.set('categories', categoryIDs.join(','));

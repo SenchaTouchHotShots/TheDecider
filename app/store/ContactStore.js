@@ -22,6 +22,11 @@ Ext.define('MyApp.store.ContactStore', {
     config: {
         autoLoad: true,
         model: 'MyApp.model.Contact',
-        storeId: 'Contacts'
+        storeId: 'Contacts',
+        grouper: {
+            groupFn: function(record) {
+                return record.get('lastname')[0];
+            }
+        }
     }
 });

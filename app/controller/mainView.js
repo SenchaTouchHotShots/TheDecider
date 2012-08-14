@@ -15,17 +15,21 @@
 
 Ext.define('MyApp.controller.mainView', {
     extend: 'Ext.app.Controller',
+    requires: 'Ext.DateExtras',
     config: {
-        views: [ 'confirmLocation', 'restaurantList', 'ViewPortContainer' ],
-        stores: [ 'ContactStore' ],
+        views: [ 'confirmLocation', 'restaurantList', 'ViewPortContainer', 'friendChooser', 'restaurantList', 'restaurantDetails'],
+        stores: [ 'ContactStore', 'RestaurantStore'],
         refs: {
             viewContainer: '#viewport',
             mainView: '#mainView',
             startButton: '#homeScreen button[action="go"]',
             cancelButton: 'button[action="cancel"]',
+            finishButton: 'button[action="finish"]',
             locationButton: 'button[action="newlocation"]',
             nextButton: 'button[action="choosefriends"]',
-            map: 'confirmlocation map'
+            map: 'confirmlocation map',
+            restaurantList: 'restaurantlist',
+            friendList: 'friendchooser list'
         },
         control: {
             startButton: {
@@ -39,6 +43,12 @@ Ext.define('MyApp.controller.mainView', {
             },
             nextButton: {
                 tap: 'doChooseFriends'
+            },
+            finishButton: {
+                tap: 'doShowRestaurants'
+            },
+            restaurantList: {
+                disclose: 'doShowRestaurantDetails'
             }
         }
     },
@@ -71,13 +81,48 @@ Ext.define('MyApp.controller.mainView', {
                     title: 'My Current Location',
                     animation: google.maps.Animation.DROP
                 });
+                map.getGeo().setLatitude(results[0].geometry.location.lat());
+                map.getGeo().setLongitude(results[0].geometry.location.lng());
             } else {
                 Ext.Msg.alert('Error', 'Unable to find address.');
             }
         }); // taken from https://developers.google.com/maps/documentation/javascript/geocoding
     },
     doChooseFriends: function() {
+        Ext.getStore('Contacts').load();
+        this.getMainView().push({ xtype: 'friendchooser' });
+    },
+    doShowRestaurants: function() {
+        var location = this.getMap().getGeo();
+        var friends = this.getFriendList().getSelection();
+        var store = Ext.getStore('Restaurants');
+        var categories = [];
+        var dt = new Date();
+        var first = true;
+        Ext.each(friends, function(friend) {
+            if (first) {
+                categories = friend.get('categories').split(',');
+                first = false;
+            } else {
+                categories = Ext.Array.intersect(categories, friend.get('categories').split(','));
+            }
+        });
+        console.log('Categories: ',categories);
+        store.load({
+            params: {
+                ll: location.getLatitude()+','+location.getLongitude(),
+                client_id: FourSquare.clientID,
+                client_secret: FourSquare.clientSecret,
+                radius: 2000,
+                categoryId: categories.join(','),
+                v: Ext.Date.format(dt, 'Ymd')
+            }
+        });
+        this.getMainView().push({xtype: 'restaurantlist', store: store});
 
+
+    },
+    doShowRestaurantDetails: function(list, record) {
+        this.getMainView().push({xtype: 'restaurantdetails', data: record.data});
     }
-
 });

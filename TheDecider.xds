@@ -80,6 +80,22 @@
                 "metadata/resource/css"
             ],
             "className": "css"
+        },
+        "e2c6090a-7732-478a-b4b2-1c6469e896d9": {
+            "paths": [
+                "metadata/controller/mainView",
+                "app/controller/override/mainView.js",
+                "app/controller/mainView.js"
+            ],
+            "className": "mainView"
+        },
+        "a43f3b89-7fb8-4953-adf4-a8b322886175": {
+            "paths": [
+                "metadata/controller/Contact",
+                "app/controller/override/Contact.js",
+                "app/controller/Contact.js"
+            ],
+            "className": "Contact"
         }
     },
     "expandedState": {

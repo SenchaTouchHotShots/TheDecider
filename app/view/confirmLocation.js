@@ -17,6 +17,41 @@ Ext.define('MyApp.view.confirmLocation', {
     extend: 'Ext.Container',
 
     config: {
+        layout: {
+            type: 'vbox'
+        },
+        items: [
+            {
+                xtype: 'container',
+                height: 40,
+                html: 'Please confirm your location:'
+            },
+            {
+                xtype: 'map',
+                height: 200,
+                minHeight: 375,
+                flex: 1
+            },
+            {
+                xtype: 'segmentedbutton',
+                height: 40,
+                margin: '10 0 10 0',
+                layout: {
+                    pack: 'center',
+                    type: 'hbox'
+                },
+                items: [
+                    {
+                        xtype: 'button',
+                        text: 'Cancel'
+                    },
+                    {
+                        xtype: 'button',
+                        text: 'Next'
+                    }
+                ]
+            }
+        ]
     }
 
 });

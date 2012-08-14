@@ -36,6 +36,25 @@ Ext.define('MyApp.view.friendChooser', {
                 ],
                 mode: 'MULTI',
                 flex: 1
+            },
+            {
+                xtype: 'segmentedbutton',
+                height: 40,
+                margin: '10 0 10 0',
+                layout: {
+                    pack: 'center',
+                    type: 'hbox'
+                },
+                items: [
+                    {
+                        xtype: 'button',
+                        text: 'Cancel'
+                    },
+                    {
+                        xtype: 'button',
+                        text: 'Finish'
+                    }
+                ]
             }
         ]
     }

@@ -30,7 +30,7 @@
                 "designer|userClassName": "mainView"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen4535",
@@ -145,7 +145,7 @@
                 "designer|userClassName": "editContact"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen5637",

@@ -1,0 +1,34 @@
+{
+    "id": "ExtBox1-ext-gen2571",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Contact"
+    },
+    "customConfigs": [],
+    "designerId": "a43f3b89-7fb8-4953-adf4-a8b322886175",
+    "$viewOrder": 1,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen2380",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "contactEditor",
+                "selector": "#editContact",
+                "designer|userClassName": "contactEditor"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

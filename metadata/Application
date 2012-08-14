@@ -19,7 +19,11 @@
             "restaurantList",
             "ViewPortContainer"
         ],
-        "name": "MyApp"
+        "name": "MyApp",
+        "controllers": [
+            "mainView",
+            "Contact"
+        ]
     },
     "customConfigs": [],
     "designerId": "application",

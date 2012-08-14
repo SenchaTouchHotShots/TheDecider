@@ -19,20 +19,24 @@ Ext.define('MyApp.model.Contact', {
         'MyApp.model.Category'
     ],
     config: {
+        identifier: 'uuid',
         fields: [
+            {
+                name: 'id'
+            },
             {
                 name: 'firstname'
             },
             {
                 name: 'lastname'
+            },
+            {
+                name: 'categories'
             }
         ],
         proxy: {
             type: 'localstorage',
             id: 'contacts'
-        },
-        hasMany: {
-            model: 'MyApp.model.Category'
         }
     }
 });

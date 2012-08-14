@@ -50,6 +50,7 @@ Ext.define('MyApp.view.ViewPortContainer', {
                         items: [
                             {
                                 xtype: 'button',
+                                action: 'go',
                                 margin: 75,
                                 text: 'Get Started!',
                                 flex: 1
@@ -87,7 +88,7 @@ Ext.define('MyApp.view.ViewPortContainer', {
                         itemTpl: [
                             '<div><span class="icon"><img src="{imgURL}" /></span> {shortName}</div>'
                         ],
-                        store: 'MyJsonStore',
+                        store: 'Categories',
                         mode: 'MULTI',
                         flex: 1
                     },

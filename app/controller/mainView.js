@@ -16,5 +16,68 @@
 Ext.define('MyApp.controller.mainView', {
     extend: 'Ext.app.Controller',
     config: {
+        views: [ 'confirmLocation', 'restaurantList', 'ViewPortContainer' ],
+        stores: [ 'ContactStore' ],
+        refs: {
+            viewContainer: '#viewport',
+            mainView: '#mainView',
+            startButton: '#homeScreen button[action="go"]',
+            cancelButton: 'button[action="cancel"]',
+            locationButton: 'button[action="newlocation"]',
+            nextButton: 'button[action="choosefriends"]',
+            map: 'confirmlocation map'
+        },
+        control: {
+            startButton: {
+                tap: 'doStart'
+            },
+            cancelButton: {
+                tap: 'doCancel'
+            },
+            locationButton: {
+                tap: 'doNewLocation'
+            },
+            nextButton: {
+                tap: 'doChooseFriends'
+            }
+        }
+    },
+    doStart: function() {
+        this.getMainView().push({ xtype: 'confirmlocation' });
+    },
+    doCancel: function() {
+        var count = this.getMainView().items.length - 1;
+        this.getMainView().pop(count);
+    },
+    doNewLocation: function() {
+        Ext.Msg.prompt(
+            '',
+            'Please enter the address you want to search from:',
+            this.setNewLocation,
+            this,
+            100
+        );
+    },
+    setNewLocation: function(buttonID, address) {
+        var geocoder = new google.maps.Geocoder();
+        var map = this.getMap(); // twice, once for the Ext.map, then for the google map it contains.
+        geocoder.geocode({'address': address}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map.getGeo().suspendUpdates();
+                map.getMap().setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map.getMap(),
+                    position: results[0].geometry.location,
+                    title: 'My Current Location',
+                    animation: google.maps.Animation.DROP
+                });
+            } else {
+                Ext.Msg.alert('Error', 'Unable to find address.');
+            }
+        }); // taken from https://developers.google.com/maps/documentation/javascript/geocoding
+    },
+    doChooseFriends: function() {
+
     }
+
 });

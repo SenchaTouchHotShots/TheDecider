@@ -13,6 +13,10 @@
  * Do NOT hand edit this file.
  */
 
+Ext.Loader.setPath({
+    'Ext.plugin': 'lib/plugin'
+});
+
 Ext.Loader.setConfig({
     enabled: true
 });
@@ -30,6 +34,9 @@ Ext.application({
         'confirmLocation',
         'restaurantList',
         'ViewPortContainer'
+    ],
+    requires: [
+        'Ext.plugin.google.Tracker'
     ],
     name: 'MyApp',
     controllers: [

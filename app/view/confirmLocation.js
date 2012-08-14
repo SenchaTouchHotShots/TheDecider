@@ -15,7 +15,7 @@
 
 Ext.define('MyApp.view.confirmLocation', {
     extend: 'Ext.Container',
-
+    alias: 'widget.confirmlocation',
     config: {
         layout: {
             type: 'vbox'
@@ -23,14 +23,24 @@ Ext.define('MyApp.view.confirmLocation', {
         items: [
             {
                 xtype: 'container',
-                height: 40,
+                height: 25,
                 html: 'Please confirm your location:'
             },
             {
                 xtype: 'map',
-                height: 200,
-                minHeight: 375,
-                flex: 1
+                useCurrentLocation: true,
+                flex: 1,
+                plugins: [
+                    new Ext.plugin.google.Tracker({
+                        trackSuspended: false,   //suspend tracking initially
+                        allowHighAccuracy: false,
+                        marker: new google.maps.Marker({
+                            position: new google.maps.LatLng(37.44885, -122.158592),  //Sencha HQ
+                            title: 'My Current Location',
+                            animation: google.maps.Animation.DROP
+                        })
+                    })
+                ]
             },
             {
                 xtype: 'segmentedbutton',
@@ -43,11 +53,18 @@ Ext.define('MyApp.view.confirmLocation', {
                 items: [
                     {
                         xtype: 'button',
-                        text: 'Cancel'
+                        text: 'Cancel',
+                        action: 'cancel'
                     },
                     {
                         xtype: 'button',
-                        text: 'Next'
+                        text: 'New Location',
+                        action: 'newlocation'
+                    },
+                    {
+                        xtype: 'button',
+                        text: 'Next',
+                        action: 'choosefriends'
                     }
                 ]
             }

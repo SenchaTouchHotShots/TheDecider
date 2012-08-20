@@ -52,6 +52,9 @@ Ext.define('MyApp.view.ViewPortContainer', {
                                 xtype: 'button',
                                 action: 'go',
                                 margin: 75,
+/*                                icon: 'https://foursquare.com/img/categories/food/default_64.png',
+                                iconAlign: 'top',
+                                iconClass: 'largeIcon',*/
                                 text: 'Get Started!',
                                 flex: 1
                             }

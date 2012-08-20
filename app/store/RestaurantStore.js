@@ -20,7 +20,6 @@ Ext.define('MyApp.store.RestaurantStore', {
     ],
 
     config: {
-        autoLoad: true,
         model: 'MyApp.model.Restaurant',
         storeId: 'Restaurants',
         proxy: {

@@ -17,7 +17,7 @@ Ext.define('MyApp.controller.mainView', {
     extend: 'Ext.app.Controller',
     requires: 'Ext.DateExtras',
     config: {
-        views: [ 'confirmLocation', 'restaurantList', 'ViewPortContainer', 'friendChooser', 'restaurantList', 'restaurantDetails'],
+        views: [ 'confirmLocation', 'restaurantList', 'ViewPortContainer', 'friendChooser', 'restaurantDetails'],
         stores: [ 'ContactStore', 'RestaurantStore'],
         refs: {
             viewContainer: '#viewport',
@@ -53,7 +53,23 @@ Ext.define('MyApp.controller.mainView', {
         }
     },
     doStart: function() {
-        this.getMainView().push({ xtype: 'confirmlocation' });
+        var contactStore = Ext.getStore('Contacts');
+        contactStore.load();
+        console.log(contactStore);
+        if(contactStore.getCount() > 0) {
+            this.getMainView().push({ xtype: 'confirmlocation' });
+        } else {
+            Ext.Msg.confirm('No Contacts', 'You will need to add some contacts before we can search for restaurants. Would you like to add contacts now?', function(btn){
+                if(btn == 'yes') {
+                    Ext.getCmp('viewport').setActiveItem(1);
+                }
+            }, this);
+        }
+
+    },
+    doContacts: function(btn) {
+        console.log(btn);
+
     },
     doCancel: function() {
         var count = this.getMainView().items.length - 1;
@@ -89,7 +105,6 @@ Ext.define('MyApp.controller.mainView', {
         }); // taken from https://developers.google.com/maps/documentation/javascript/geocoding
     },
     doChooseFriends: function() {
-        Ext.getStore('Contacts').load();
         this.getMainView().push({ xtype: 'friendchooser' });
     },
     doShowRestaurants: function() {
